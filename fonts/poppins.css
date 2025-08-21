@@ -1,0 +1,56 @@
+
+/* Poppins Font CSS */
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Design System CSS Variables */
+:root {
+    /* Colors */
+    --color-primary: #3629B7;
+    --color-secondary: #F2F1F9;
+    --color-text-primary: #343434;
+    --color-text-secondary: #FFFFFF;
+    --color-status-bar-bg: #424242;
+    --color-status-bar-fg: #343434;
+    
+    /* Card Colors */
+    --color-visa-primary: #FFC256;
+    --color-visa-secondary: #FFAF2A;
+    --color-visa-accent: #FFCA73;
+    --color-mastercard-primary: #DAEBFF;
+    --color-mastercard-secondary: #B8D4F0;
+    --color-mastercard-accent: #A5C7E8;
+    
+    /* Typography */
+    --font-family-primary: 'Poppins', sans-serif;
+    --font-size-card-holder: 24px;
+    --font-size-card-type: 14px;
+    --font-size-card-number: 16px;
+    --font-size-balance: 20px;
+    
+    /* Spacing */
+    --spacing-card-padding: 24px;
+    --spacing-section: 24px;
+    --spacing-element: 8px;
+}

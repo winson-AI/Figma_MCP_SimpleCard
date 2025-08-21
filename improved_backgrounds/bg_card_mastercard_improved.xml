@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="327dp"
+    android:height="204dp"
+    android:viewportWidth="327"
+    android:viewportHeight="204">
+    
+    <!-- Main card background with rounded corners -->
+    <path
+        android:fillColor="#DAEBFF"
+        android:pathData="M342.783,26H44.2174C36.3653,26 30,32.2557 30,39.9726V216.027C30,223.744 36.3653,230 44.2174,230H342.783C350.635,230 357,223.744 357,216.027V39.9726C357,32.2557 350.635,26 342.783,26Z" />
+    
+    <!-- Large background circle (light blue) -->
+    <path
+        android:fillColor="#B8D4F0"
+        android:pathData="M120.4204,301.254C218.01,301.254 297.122,223.504 297.122,127.594C297.122,31.6849 218.01,-46.0652 120.4204,-46.0652C22.8307,-46.0652 -56.2814,31.6849 -56.2814,127.594C-56.2814,223.504 22.8307,301.254 120.4204,301.254Z" />
+    
+    <!-- Medium circle (medium blue) -->
+    <path
+        android:fillColor="#A5C7E8"
+        android:pathData="M105.6868,120.502C158.408,120.502 201.146,78.499 201.146,26.6858C201.146,-25.1275 158.408,-67.1304 105.6868,-67.1304C52.9659,-67.1304 10.2271,-25.1275 10.2271,26.6858C10.2271,78.499 52.9659,120.502 105.6868,120.502Z" />
+    
+    <!-- Small decorative circles (darker blue) -->
+    <path
+        android:fillColor="#92BAE0"
+        android:pathData="M260.634,106.549C266.756,106.549 271.719,101.671 271.719,95.6548C271.719,89.6382 266.756,84.7609 260.634,84.7609C254.512,84.7609 249.549,89.6382 249.549,95.6548C249.549,101.671 254.512,106.549 260.634,106.549Z" />
+    
+    <path
+        android:fillColor="#92BAE0"
+        android:pathData="M219.62,199.1C234.925,199.1 247.332,186.907 247.332,171.865C247.332,156.824 234.925,144.63 219.62,144.63C204.316,144.63 191.908,156.824 191.908,171.865C191.908,186.907 204.316,199.1 219.62,199.1Z" />
+</vector>

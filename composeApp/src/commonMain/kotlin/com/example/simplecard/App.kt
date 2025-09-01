@@ -120,7 +120,6 @@ fun NavigationBar() {
             .fillMaxWidth()
             .height(53.dp)
             .padding(horizontal = 16.dp),
-        horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(
@@ -135,7 +134,8 @@ fun NavigationBar() {
             text = "Account and card",
             fontSize = 20.sp,
             fontWeight = FontWeight.SemiBold,
-            color = Color(0xFF343434)
+            color = Color(0xFF343434) ,
+            modifier = Modifier.padding(start = 12.dp)
         )
         
         Spacer(modifier = Modifier.width(16.dp))
@@ -259,7 +259,7 @@ fun CreditCard(
                     color = Color.White
                 )
                 
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(42.dp))
                 
                 Text(
                     text = cardType,
@@ -287,7 +287,7 @@ fun CreditCard(
                         )
                         // Circles for hidden middle digits
                         Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                            repeat(6) {
+                            repeat(4) {
                                 Box(
                                     modifier = Modifier
                                         .size(6.dp)
@@ -296,6 +296,18 @@ fun CreditCard(
                                 )
                             }
                         }
+
+                        Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                            repeat(4) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(6.dp)
+                                        .clip(RoundedCornerShape(3.dp))
+                                        .background(Color.White.copy(alpha = 0.4f))
+                                )
+                            }
+                        }
+
                         Text(
                             text = parts.lastOrNull() ?: "",
                             fontSize = 16.sp,

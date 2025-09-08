@@ -3,6 +3,7 @@ package com.example.simplecard
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -10,17 +11,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
+
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import simplecard.composeapp.generated.resources.Res
-import simplecard.composeapp.generated.resources.bg_card_visa_improved
-import simplecard.composeapp.generated.resources.bg_card_mastercard_improved
 import simplecard.composeapp.generated.resources.ic_arrow_down
 import simplecard.composeapp.generated.resources.ic_wifi
 import simplecard.composeapp.generated.resources.ic_signal
@@ -193,32 +194,49 @@ fun CardsSection() {
         verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         // First Card (Visa)
+        val cardVisaBoxs = listOf(
+            Modifier.size(350.dp).offset((-130).dp, (-25).dp)
+                .aspectRatio(1f).background(Color(0xFF1E1671), CircleShape),
+            Modifier.size(190.dp).offset((223).dp, (-59).dp)
+                .aspectRatio(1f).background(Color(0xFF4EB4FF), CircleShape)
+        )
+        // Second Card (master)
+        val cardMasterLogos = listOf(
+            Modifier.size(350.dp).offset((-115).dp, (-72).dp)
+                .aspectRatio(1f).background(Color(0xFFFFAF2A), CircleShape),
+            Modifier.size(190.dp).offset((-48).dp, (-93).dp)
+                .aspectRatio(1f).background(Color(0xFFFFCA73), CircleShape),
+            Modifier.size(55.dp).offset((131).dp, (118).dp)
+                .aspectRatio(1f).background(Color(0xFFFFCA73), CircleShape),
+            Modifier.size(22.dp).offset((190).dp, (58).dp)
+                .aspectRatio(1f).background(Color(0xFFFFCA73), CircleShape)
+        )
         CreditCard(
-            cardBackground = Res.drawable.bg_card_visa_improved,
+            circleBoxModifiers = cardVisaBoxs,
             cardLogo = Res.drawable.ic_visa,
             cardNumber = "4756 9018",
             cardHolder = "John Smith",
             cardType = "Amazon Platinium",
             balance = "$3.469.52",
-            backgroundColor = Color.Transparent
+            backgroundColor = Color(0xFF1573FF)
         )
         
         // Second Card (Mastercard)
         CreditCard(
-            cardBackground = Res.drawable.bg_card_mastercard_improved,
+            circleBoxModifiers = cardMasterLogos,
             cardLogo = Res.drawable.ic_mastercard,
             cardNumber = "4756 9018",
             cardHolder = "John Smith",
             cardType = "Amazon Platinium",
             balance = "$3.469.52",
-            backgroundColor = Color.Transparent
+            backgroundColor = Color(0xFFFFC256)
         )
     }
 }
 
 @Composable
 fun CreditCard(
-    cardBackground: org.jetbrains.compose.resources.DrawableResource?,
+    circleBoxModifiers: List<Modifier>,
     cardLogo: org.jetbrains.compose.resources.DrawableResource?,
     cardNumber: String,
     cardHolder: String,
@@ -228,18 +246,14 @@ fun CreditCard(
 ) {
     Box(
         modifier = Modifier
-            .fillMaxWidth()
-            .height(204.dp)
+            .size(327.dp, 204.dp)
             .clip(RoundedCornerShape(12.dp))
             .background(backgroundColor)
     ) {
-        // Card Background
-        cardBackground?.let { background ->
-            Image(
-                painter = painterResource(background),
-                contentDescription = "Card Background",
-                modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.FillBounds
+        // Card Circle Background
+        circleBoxModifiers.forEach { circleBox ->
+            Box(
+                modifier = circleBox
             )
         }
         
